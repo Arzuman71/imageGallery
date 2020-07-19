@@ -32,7 +32,6 @@ public class ImageController {
                 modelMap.addAttribute("images", images);
             }
         } else {
-            modelMap.addAttribute("categoryName", "All Category");
             modelMap.addAttribute("images", imageService.findAll());
         }
         return "images";
