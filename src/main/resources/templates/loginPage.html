@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
   <head>
 
@@ -10,7 +9,7 @@
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
-    <title>ADMIN</title>
+    <title>about</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -42,27 +41,27 @@ https://templatemo.com/tm-546-sixteen-clothing
     <!-- ***** Preloader End ***** -->
 
     <!-- Header -->
-      <header class="">
+    <header class="">
       <nav class="navbar navbar-expand-lg">
         <div class="container">
-          <a class="navbar-brand" href="/logout"><h2><em>logout</em></h2></a>
+          <a class="navbar-brand" href="/"><h2>HOME</h2></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                <a class="nav-link" href="/">HOME
+                <a class="nav-link" href="/">Home
                   <span class="sr-only">(current)</span>
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/byCategory">ALL IMAGES</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/loginPage">Login</a>
-              </li>
               <li class="nav-item active">
+                <a class="nav-link" href="#">Login</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link" href="/admin">ADMIN</a>
               </li>
             </ul>
@@ -72,13 +71,13 @@ https://templatemo.com/tm-546-sixteen-clothing
     </header>
 
     <!-- Page Content -->
-    <div  class=" page-heading contact-heading header-text">
+    <div class="page-heading about-heading header-text">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
             <div class="text-content">
-              <h4>WELCOME</h4>
-              <h2>MR. POXOS</h2>
+              <h4>about us</h4>
+              <h2>our company</h2>
             </div>
           </div>
         </div>
@@ -86,25 +85,57 @@ https://templatemo.com/tm-546-sixteen-clothing
     </div>
 
 
+    <div class="best-features about-features">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-heading">
+              <h2>Our Background</h2>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="right-image">
+              <img src="assets/images/feature-image.jpg" alt="">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="left-content">
+              <h4>Who we are &amp; What we do?</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed voluptate nihil eum consectetur similique? Consectetur, quod, incidunt, harum nisi dolores delectus reprehenderit voluptatem perferendis dicta dolorem non blanditiis ex fugiat. Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, consequuntur, modi mollitia corporis ipsa voluptate corrupti eum ratione ex ea praesentium quibusdam? Aut, in eum facere corrupti necessitatibus perspiciatis quis.</p>
+              <ul class="social-icons">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="#"><i class="fa fa-behance"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
     <div class="send-message">
       <div class="container">
         <div class="row">
           <div class="col-md-8">
             <div class="contact-form">
-              <form id="category" action="/saveCategory" method="post" enctype="multipart/form-data">
+              <form action="/perform_login" method="post">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12">
                     <fieldset>
-                      <input name="name" type="text" class="form-control" id="name" placeholder="NAME" required="">
+                      <input class="form-control" type="text" name="username" placeholder="please input username"/></br>
+
                     </fieldset>
                   </div>
                   <div class="col-lg-12 col-md-12 col-sm-12">
-                      <input name="image" type="file"  id="image"  required="">
+                    <fieldset>
+                      <input class="form-control"  type="password" name="password" placeholder="please input password"/></br>
+                    </fieldset>
                   </div>
                   <div class="col-lg-12">
                     <fieldset>
-                      <button type="submit" class="filled-button">SAVE CATEGORY</button>
+                      <button type="submit" class="filled-button">Login</button>
                     </fieldset>
                   </div>
                 </div>
@@ -115,34 +146,46 @@ https://templatemo.com/tm-546-sixteen-clothing
       </div>
     </div>
 
+
+
     <div class="send-message">
       <div class="container">
         <div class="row">
           <div class="col-md-8">
             <div class="contact-form">
-              <form id="new_image" action="/saveImage" method="post" enctype="multipart/form-data">
+              <form action="/addUser" method="post" enctype="multipart/form-data">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12">
                     <fieldset>
-                      <input name="name" type="text" class="form-control" id="name_img" placeholder="NAME" required="">
+                      <input class="form-control"  type="text" name="name" placeholder="Please input name"/><br>
                     </fieldset>
                   </div>
                   <div class="col-lg-12 col-md-12 col-sm-12">
                     <fieldset>
-                      <input name="pic" type="file" id="picU"  required="">
+                      <input class="form-control" type="text" name="surname" placeholder="Please input surneme"/><br>
                     </fieldset>
                   </div>
+                  <div class="col-lg-12 col-md-12 col-sm-12">
+                    <fieldset>
+                      <input class="form-control" type="text" name="username" placeholder="Please input username"/><br>
+                    </fieldset>
+                  </div>
+                       <div class="col-lg-12 col-md-12 col-sm-12">
+                    <fieldset>
+                      <input class="form-control" type="password" name="password" placeholder="Please input password"/><br>
+                    </fieldset>
+                      </div>
                   <div class="col-lg-12">
                     <fieldset>
-                      <select name="category.id">
-
-                        <option th:each=" category :${categories}" th:value="${category.id}" th:text="${category.name}"></option>
+                      <select name="role">
+                        <option value="USER">user</option>
+                        <option value="ADMIN">admin</option>
                       </select>
                     </fieldset>
                   </div>
                   <div class="col-lg-12">
                     <fieldset>
-                      <button type="submit" id="form-submit" class="filled-button">SAVE IMAGE</button>
+                      <button type="submit" id="form-submit" class="filled-button">Add User</button>
                     </fieldset>
                   </div>
                 </div>
@@ -154,40 +197,7 @@ https://templatemo.com/tm-546-sixteen-clothing
     </div>
 
 
-    <div class="send-message">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8">
-            <div class="contact-form">
-              <form id="mainImage" action="/saveMainImage" method="post" enctype="multipart/form-data">
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12">
-                    <fieldset>
-                      <input name="title" type="text" class="form-control" id="title" placeholder="TITLE" required="">
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-12 col-md-12 col-sm-12">
-                    <fieldset>
-                      <input name="description" type="text" class="form-control" id="description" placeholder="DESCRIPTION" required="">
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-12 col-md-12 col-sm-12">
-                    <input name="pic" type="file"  id="pic"  required="">
-                  </div>
-                  <div class="col-lg-12">
-                    <fieldset>
-                      <button type="submit" class="filled-button">SAVE MAIN IMAGE</button>
-                    </fieldset>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Bootstrap core JavaScript -->
+      <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 

@@ -42,7 +42,7 @@ public class ImageService {
 
     }
 
-    public List<Image> findAllByCategory_Id(int id) {
+    public List<Image> findAllByCategoryId(int id) {
         return imageRepository.findAllByCategory_Id(id) ;
     }
 

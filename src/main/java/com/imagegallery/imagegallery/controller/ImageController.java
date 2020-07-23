@@ -24,7 +24,7 @@ public class ImageController {
     public String byCategoryId(ModelMap modelMap, @RequestParam(name = "id", required = false) Integer id) {
 
         if (id != null && id != 0) {
-            List<Image> images = imageService.findAllByCategory_Id(id);
+            List<Image> images = imageService.findAllByCategoryId(id);
             if (images != null && images.size() != 0) {
                 String categoryName = images.get(0).getCategory().getName();
 

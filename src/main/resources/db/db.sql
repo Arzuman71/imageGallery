@@ -66,6 +66,24 @@ CREATE TABLE `main_image` (
 
 insert  into `main_image`(`id`,`pic_url`,`title`,`description`) values (1,'contact-heading.jpg','title','GOOD'),(7,'ff40c71ff6b046aeb0e12dfc2b432ca5black_man.jpg','test','test');
 
+/*Table structure for table `user` */
+
+DROP TABLE IF EXISTS `user`;
+
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `surname` varchar(255) DEFAULT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `role` enum('USER','ADMIN') NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `user` */
+
+insert  into `user`(`id`,`name`,`surname`,`username`,`password`,`role`) values (2,'poxos','poxos','poxos','$2a$10$d.wLrdEKGof33hs5ha0rTOCJ9EGajWWmRy4xbafDlPplY.2dS7KdC','ADMIN'),(3,'po','po','po','$2a$10$UpRtUEnx.axTeW/f277JTelg2K52crZtGOmahrEYI1VG1S8nJFS4q','USER');
+
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;

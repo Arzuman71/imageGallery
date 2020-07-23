@@ -1,5 +1,6 @@
 package com.imagegallery.imagegallery.config;
 
+import com.imagegallery.imagegallery.security.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,7 +14,10 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    PasswordEncoder passwordEncoder;
+    private PasswordEncoder passwordEncoder;
+
+    @Autowired
+    private UserDetailsServiceImpl userDetailsService;
 
 
     @Override
@@ -21,23 +25,22 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
         http.csrf().disable()
                 .formLogin()
+                .loginPage("/loginPage")
+                .loginProcessingUrl("/perform_login")
+                .defaultSuccessUrl("/successLogin")
                 .and()
                 .logout()
                 .logoutSuccessUrl("/")
                 .and()
                 .authorizeRequests()
                 .antMatchers("/").permitAll()
-                .antMatchers("/admin").hasAnyRole("ADMIN");
+                .antMatchers("/admin").hasAnyAuthority("ADMIN");
     }
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-
-        auth.inMemoryAuthentication()
-                .withUser("poxos")
-                .password(passwordEncoder.encode("poxos"))
-                .roles("ADMIN");
-
+        auth.userDetailsService(userDetailsService)
+                .passwordEncoder(passwordEncoder);
     }
 
     @Bean

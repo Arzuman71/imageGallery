@@ -40,4 +40,8 @@ public class MainImageService {
 
     }
 
+
+    public void deleteById(int id) {
+         mainImageRepository.deleteById(id);
+    }
 }
