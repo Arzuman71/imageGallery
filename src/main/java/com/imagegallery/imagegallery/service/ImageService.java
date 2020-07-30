@@ -34,22 +34,21 @@ public class ImageService {
 
             file.transferTo(picUrl);
 
-        image.setPicUrl(name);
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
+            image.setPicUrl(name);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         return imageRepository.save(image);
 
     }
 
     public List<Image> findAllByCategoryId(int id) {
-        return imageRepository.findAllByCategory_Id(id) ;
+        return imageRepository.findAllByCategory_Id(id);
     }
 
     public List<Image> findAll() {
-        return imageRepository.findAll() ;
+        return imageRepository.findAll();
     }
-
 
 
     public byte[] getImage(String imageName) throws IOException {

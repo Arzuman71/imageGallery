@@ -38,16 +38,12 @@ public class ImageController {
     }
 
 
-
-
     @PostMapping("/saveImage")
     public String save(@ModelAttribute("new_image") Image image, @RequestParam("pic") MultipartFile file) {
 
         imageService.save(image, file);
         return "redirect:/admin";
     }
-
-
 
 
     @GetMapping(value = "/image",

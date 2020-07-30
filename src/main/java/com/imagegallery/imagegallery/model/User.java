@@ -23,6 +23,10 @@ public class User {
     private String username;
     private String surname;
     private String password;
+    @Transient
+    private String confirmPassword;
+    private String token;
+    private boolean active;
     @Enumerated(value = EnumType.STRING)
     private Role role;
 
